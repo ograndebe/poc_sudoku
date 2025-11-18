@@ -2,7 +2,7 @@
   
   "compilerOptions": {
     // File Layout
-    "outDir": "./build",
+    "outDir": "./dist",
 
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
@@ -41,5 +41,5 @@
     "skipLibCheck": true
   },
   "include": ["src/**/*", "tests/**/*"],
-  "exclude": ["node_modules", "build"]
+  "exclude": ["node_modules", "dist"]
 }
