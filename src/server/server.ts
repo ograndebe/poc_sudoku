@@ -18,7 +18,7 @@ export function createServer() {
       const urlObj = new URL(req.url, `http://${req.headers.host}`);
       const customMsg = urlObj.searchParams.get('msg');
       const hello = customMsg ? new HelloWorld(customMsg) : new HelloWorld();
-      const html = readFileSync(join(__dirname, '../../build/presentation/index.html'), 'utf-8');
+      const html = readFileSync(join(__dirname, '../presentation/index.html'), 'utf-8');
       res.writeHead(200, { 'Content-Type': 'text/html' });
       res.end(html.replace('{{message}}', hello.getMessage()));
     } else {
