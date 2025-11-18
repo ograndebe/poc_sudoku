@@ -1,50 +1,43 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+# Sudoku POC Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### I. Clean Code
+O código do projeto deve ser legível, simples, sem duplicidade, com nomes claros e responsabilidade única. Comentários só são permitidos para explicar decisões não óbvias. Código complexo ou confuso é proibido.
+**Racional**: Facilita manutenção, onboarding e evolução segura do projeto.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### II. Testes Unitários Obrigatórios
+Toda unidade de código (função, classe, módulo) deve possuir testes unitários automatizados. Não é permitido mergear código sem cobertura de testes adequada.
+**Racional**: Garante confiabilidade, previne regressões e permite refatoração segura.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+### III. Uso Responsável de Mocks
+Mocks só podem ser utilizados se validam comportamento real. É proibido mocks que não testam nada ou que apenas simulam dependências sem verificação de resultado. Todo mock deve ser justificado no teste.
+**Racional**: Evita testes inúteis e garante que o teste realmente valida o comportamento esperado.
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+## Requisitos Adicionais
+O projeto deve utilizar ferramentas de lint e formatação automática. O padrão de testes unitários deve ser seguido em todos os módulos. Pull Requests só podem ser aprovados se todos os testes passarem e houver revisão de código.
+
+
+## Fluxo de Desenvolvimento
+Todo código novo ou alterado deve passar por revisão obrigatória. É obrigatório validar se os testes cobrem todos os caminhos relevantes, especialmente em casos de uso de mocks. O merge só é permitido após aprovação e sucesso dos testes automatizados.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+A constituição do projeto prevalece sobre qualquer prática anterior. Alterações exigem documentação, aprovação por consenso e atualização dos templates e artefatos dependentes. Todo Pull Request deve verificar conformidade com os princípios definidos. Revisões periódicas devem ser realizadas a cada 6 meses ou quando houver mudança significativa.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+<!--
+Sync Impact Report:
+Version change: 0.0.0 → 1.0.0
+Princípios modificados: todos (template → Clean Code, Testes Unitários, Mocks Responsáveis)
+Seções adicionadas: Requisitos Adicionais, Fluxo de Desenvolvimento
+Seções removidas: placeholders de princípios e seções extras
+Templates requerem atualização: plan-template.md ✅, spec-template.md ✅, tasks-template.md ✅
+Follow-up TODOs: TODO(RATIFICATION_DATE): Definir data de ratificação oficial
+-->
+
+**Version**: 1.0.0 | **Ratified**: TODO(RATIFICATION_DATE) | **Last Amended**: 2025-11-18
